@@ -20,3 +20,4 @@ spec:
         image: arunsonti/hello-world-springboot-app:1.0
         ports:
         - containerPort: 8080
+          protocol: TCP
