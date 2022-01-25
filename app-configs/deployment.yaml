@@ -6,7 +6,7 @@ metadata:
   labels:
     app: hello-world
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: hello-world
@@ -18,6 +18,9 @@ spec:
       containers:
       - name: hello-world
         image: arunsonti/hello-world-springboot-app:1.0
+        envFrom:
+          - configMapRef:
+              name: hello-world
         ports:
         - containerPort: 8080
           protocol: TCP
