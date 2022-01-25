@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: arunsonti/hello-world-springboot-app:1.0
+        image: arunsonti/hello-world-springboot-app:2.0
         envFrom:
           - configMapRef:
               name: hello-world
