@@ -4,5 +4,5 @@ metadata:
   name: hello-world
   namespace: hackathon
 data:
-  NAME: Arun
-  TEAM_NAME: Gotham
+  NAME: Tejas
+  TEAM_NAME: Zelda
