@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-hello-world
-  namespace: argo-cd
+  namespace: argo
 spec:
   project: default
   source:
@@ -15,7 +15,6 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-
     automated:
       selfHeal: true
       prune: true
