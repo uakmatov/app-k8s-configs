@@ -11,7 +11,7 @@ spec:
     path: app-configs
   destination:
     server: https://kubernetes.default.svc
-    namespace: hackathon
+    namespace: app
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
