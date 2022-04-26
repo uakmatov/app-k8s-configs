@@ -2,6 +2,7 @@ kind: ConfigMap
 apiVersion: v1 
 metadata:
   name: hello-world
+  namespace: app
 data:
   NAME: Arun
   TEAM_NAME: Gotham
