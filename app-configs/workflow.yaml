@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  name: load-workflow-demo-2
+  name: load-workflow-demo-1
   namespace: argo
 spec:
   entrypoint: data-load
@@ -22,7 +22,7 @@ spec:
       - name: load-data-in-postgres
         template: echo
         arguments:
-          parameters: [{name: message, value: Loading data in Postgres HI_ref schema}]
+          parameters: [{name: message, value: Loading data in Postgres HI_Ref schema}]
       - name: load-data-in-redis
         depends: "load-data-in-postgres"
         template: echo
