@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  name: jobs-dag-example
+  name: load-workflow
   namespace: argo
 spec:
   entrypoint: data-load
