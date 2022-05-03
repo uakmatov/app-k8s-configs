@@ -12,12 +12,12 @@ spec:
       - name: load-data-in-postgres
         template: echo
         arguments:
-          parameters: [{name: message, value: Loading data in postgres hi_ref schema}]
+          parameters: [{name: message, value: Loading data in Postgres hi_ref schema}]
       - name: load-data-in-redis
         depends: "load-data-in-postgres"
         template: echo
         arguments:
-          parameters: [{name: message, value: Loading data in redis}]
+          parameters: [{name: message, value: Loading data in Redis}]
       - name: validate-postgres-data
         depends: "load-data-in-postgres"
         template: echo
