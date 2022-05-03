@@ -7,10 +7,10 @@ spec:
   entrypoint: data-load
   spec:
   # must complete in 8h (28,800 seconds)
-  activeDeadlineSeconds: 28800
+  activeDeadlineSeconds: 100
   # keep workflows for 1d (86,400 seconds)
   ttlStrategy:
-    secondsAfterCompletion: 86400
+    secondsAfterCompletion: 300
   # delete all pods as soon as they complete
   podGC:
     strategy: OnPodCompletion
