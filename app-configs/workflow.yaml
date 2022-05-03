@@ -1,40 +1,33 @@
-# The following workflow executes a diamond workflow
-# 
-#   A
-#  / \
-# B   C
-#  \ /
-#   D
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   name: jobs-dag-example
   namespace: argo
 spec:
-  entrypoint: diamond
+  entrypoint: data-load
   templates:
-  - name: diamond
+  - name: data-load
     dag:
       tasks:
-      - name: A
+      - name: load-data-in-postgres
         template: echo
         arguments:
-          parameters: [{name: message, value: A}]
-      - name: B
-        depends: "A"
+          parameters: [{name: message, value: Loading data in postgres hi_ref schema}]
+      - name: load-data-in-redis
+        depends: "load-data-in-postgres"
         template: echo
         arguments:
-          parameters: [{name: message, value: B}]
-      - name: C
-        depends: "A"
+          parameters: [{name: message, value: Loading data in redis}]
+      - name: validate-postgres-data
+        depends: "load-data-in-postgres"
         template: echo
         arguments:
-          parameters: [{name: message, value: C}]
-      - name: D
-        depends: "B && C"
+          parameters: [{name: message, value: Validating-postgres-data}]
+      - name: validating-redis-keys
+        depends: "load-data-in-redis && validate-postgres-data"
         template: echo
         arguments:
-          parameters: [{name: message, value: D}]
+          parameters: [{name: message, value: Validating-redis-keys}]
 
   - name: echo
     inputs:
