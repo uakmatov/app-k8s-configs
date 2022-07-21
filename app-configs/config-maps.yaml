@@ -4,5 +4,5 @@ metadata:
   name: hello-world
   namespace: app
 data:
-  NAME: TEAM
+  NAME: Arun
   TEAM_NAME: Gotham
